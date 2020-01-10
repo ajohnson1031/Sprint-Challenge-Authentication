@@ -6,11 +6,12 @@ const jwt = require("jsonwebtoken");
 const secrets = require("../config");
 
 router.post("/register", credentials, async (req, res) => {
+  const { username, password } = req.body;
+  req.body.password = bcrypt.hashSync(password, 12);
   // implement registration
-  password = bcrypt.hashSync(password, 12);
-
   try {
     const newUser = await users.add(req.body);
+    console.log(newUser);
     if (newUser)
       res
         .status(201)
@@ -22,6 +23,7 @@ router.post("/register", credentials, async (req, res) => {
 
 router.post("/login", credentials, async (req, res) => {
   // implement login
+  const { username, password } = req.body;
   try {
     const logUser = await users.findBy(username);
 

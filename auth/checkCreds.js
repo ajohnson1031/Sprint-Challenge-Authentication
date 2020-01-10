@@ -4,5 +4,7 @@ module.exports = (req, res, next) => {
     res
       .status(400)
       .json({ message: "Username and Password are both required fields." });
-  else next();
+  else {
+    next();
+  }
 };
