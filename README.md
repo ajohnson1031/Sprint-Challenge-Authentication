@@ -39,12 +39,13 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
-
+      Sessions help to persist data in the application between page requests. They are a great low-impact way to retain information or "application state" in a stateless environment.
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
-
+      BCRYPT uses [a] hashing algorithm(s) to do one-way encrpytion on password strings that are passed through it. That encrypted (non-human readable) password is then stored safely in the database through other means.
 - [ ] What does bcrypt do to slow down attackers?
-
+      The BCRYPT hashing method takes two [required] arguments. The string to be hashed, and an integer, representing the number of times BCRYPT will pass the string through the hashing algorithm. Hashing the string multiple times greatly slows down attackers' progress.
 - [ ] What are the three parts of the JSON Web Token?
+      Three parts: Payload, Secret, Options.
 
 ## Minimum Viable Product
 
